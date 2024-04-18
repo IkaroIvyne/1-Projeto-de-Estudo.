@@ -45,7 +45,8 @@ Body * {
 
 #Container {
   /*Identificador único utilizado ao lado do Seletor no html*/
-  width: 360px; /*Define a largura*/
+  width: 100%; /*Define a largura*/
+  max-width: 588px;
   /*height: 712px;*/
   /*border: 1px solid whitesmoke;*/ /*adiciona uma borda solida!*/
   margin: 56px auto 0px; /*Calcula a área em branco e alinha os elementos, lembrando que existe uma regra no CSS que faz com quê isso não se aplique em height (acima) ou bottom (abaixo)*/
