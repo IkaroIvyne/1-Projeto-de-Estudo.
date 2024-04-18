@@ -36,6 +36,7 @@
 Body {
   /*Identificador do seletor Body (html) que permitirá que alterações sejam feitar ou adicionadas ao codigo em html*/
   background: var(--bg-url) no-repeat top center/cover;
+  height: 100vh;
 }
 
 Body * {
@@ -187,4 +188,15 @@ footer{
   padding: 24px 0px;
   text-align: center;
   font-size: 16px;
+}
+
+/*Media Queries*//*Funciona apenas quando existe no html a linha <meta name="viewport" content; . . . */
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(./Assets/assets/bg-mobile.jpg);
+}
+
+   .light {
+    --bg-url: url(./Assets/assets/bg-mobile-light.jpg);
+   }
 }
