@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br"> 
+  <head>
+    <!--head é a parte "invisivel" de um site-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!--Tentativa de aplicar uma familia de fonte 400-500, acho que foi meio frustrada, não consegui baixar isso muito bem.-->
+
+    <meta charset="UTF-8" />
+    <!--Permite quê caracteres especiais sejam adicionados-->
+    <meta http-equiv="x-UA-Compatible" content="IE=edge" />
+    <!--Permite ser utilizado em navegadores mais antigos!-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevLinks</title>
+    <!--Edita titulo do site-->
+    <link rel="stylesheet" href="./style.css" />
+    <!--Essa linha serve para linkar o CSS ao html, permitindo assim que o CSS editi-o, de modo quê o href deve informar aonde se encontra o nosso CSS-->
+  </head>
+
+  <body>
+    <!--Body é a parte visível e está intrissicamente ligada ao Viewport em "meta name="-->
+
+    <div id="Container">
+      <!--Definirá a área em que iremos trabalhar-->
+      <div id="Profile">
+        <!--Tag Div - função: separar os conteúdos do código HTML em divisões de espaço/conjunto, sem qualquer peso semântico + id= especificador ou identificador de pelo único e valor 100-->
+        <img src="./Assets/assets/avatar.png" alt="Foto de Mayk Brito sorrindo, usando óculos e camisa preta, barba e fundo amarelo."/> <!--Img src= "" é um seletor que permite adicionar imagens á caixa, acompanhado de um especificador que indicará ao ser informado aonde se encontra o nosso arquivo de imagem. -->
+        <p>@maykbrito</p> <!--Serve para adicionar textos a nossa página-->
+      </div>
+
+       <div id="switch" onclick="toggleMode()">
+        <button></button>
+        <span></span>
+       </div>
+
+
+      <ul> <!--Possui funcionalidade de adição de itens em lista de modo enumerado-->
+        <li> <!--Lista elementos mediante a adição de links e informações adicionais.-->
+          <a href="#">Inscrever-se no NLW</a>
+        </li>
+
+        <li>
+          <a href="#">Baixar meu e-book</a>
+        </li>
+
+        <li>
+          <a href="https://github.com/maykbrito">Ver Meu Portifólio</a>
+        </li>
+
+        <li>
+         <a href="https://rocketseat.com.br/explorer" target="_blank">Conheça O Explorer</a>
+        </li>
+      </ul>
+      <div id="Social-Links">
+        <a href="https://github.com/maykbrito" target="_blank"><ion-icon name="logo-github"></ion-icon>
+        </a>
+        <a href="https://youtube.com/maykbrito" target="_blank"><ion-icon name="logo-youtube"></ion-icon>
+        </a>
+        <a href="https://instagram.com/maykbrito" target="_blank"><ion-icon name="logo-instagram"></ion-icon>
+        </a>
+        <a href="https://br.linkedin.com/in/maykbrito" target="_blank"><ion-icon name="logo-linkedin"></ion-icon>
+        </a>
+      </div>
+
+      <footer> 
+        Feito com ♥ pela <a href="https://rocketseat.com.br" target="=_blank">Rocketseat</a>
+      </footer> <!--Tag utilizada para rodapés em um site.-->
+    </div> <!--Encerra o código div-->
+
+    <!--O script a seguir serve para habilitar os icones sociais-->
+
+    <script type="module" 
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+  
+    <script 
+    nomodule 
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script src="./script.js"></script>
+
+  </body>
+  <!--Encerra o código body-->
+</html>
+<!--Encerra do código html-->

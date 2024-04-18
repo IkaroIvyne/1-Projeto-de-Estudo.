@@ -1,0 +1,189 @@
+/* Código em extenso/propriedades:
+
+  background-image: url(./Assets/assets/bg-mobile.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+ */
+
+/*Código em Shorthand (atalho) - background: color ou image, no repeat, posicion/size */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --text-color:white;
+  --bg-url: url(./Assets/assets/bg-mobile.jpg);
+  --stroke-color: rgba(255,255,255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.05);
+  --surface-color-hover: rgba(255, 255, 255, 0.02);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url(./Assets/assets/moon-stars.svg)
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url(./Assets/assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0,0,0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(./Assets/assets/sun.svg)
+}
+
+Body {
+  /*Identificador do seletor Body (html) que permitirá que alterações sejam feitar ou adicionadas ao codigo em html*/
+  background: var(--bg-url) no-repeat top center/cover;
+}
+
+Body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+#Container {
+  /*Identificador único utilizado ao lado do Seletor no html*/
+  width: 360px; /*Define a largura*/
+  /*height: 712px;*/
+  /*border: 1px solid whitesmoke;*/ /*adiciona uma borda solida!*/
+  margin: 56px auto 0px; /*Calcula a área em branco e alinha os elementos, lembrando que existe uma regra no CSS que faz com quê isso não se aplique em height (acima) ou bottom (abaixo)*/
+  padding: 0 24px
+}
+
+/*#Profile aqui é uma especificidade do tipo inline, logo, abaixo o Profile pai (Acima) pode definir a posição do item adereçado, mas se você associar ao Profile filho (Abaixo)- (Tag/Div) um display do tipo Block tornando-o uma especificidade do tipo Block, o Profile (Tag/Div) pai não consegue definir uma posição livre/inline do item indereçado ao item settado em div -> img src="Link"*/
+
+#Profile {
+  /*Identificador (pai) do tipo único ID*/
+  text-align: center;
+  padding: 24px;
+}
+
+
+
+#Profile img {
+  /*Identificador do tipo ID (filho) - tipo único, com peso 100 - utilizado ao lado do seletor no html - Linka o elemento html com o CSS, assim possibilidando edita-lo*/
+
+  /*display: block;*/
+  width: 112px; /*Define a largura, a altura geralmente não precisa ser declarada no CSS*/
+  /*margin: auto;*/ /*Define/alinha a posição do elemento identificador. OBS! ele só funciona em elementos com display Block (Display/Visualização)*/
+  filter: blur(100); /*Aplica um filtro a imagem, aqui eu fiz sozinho. hehe!*/
+}
+
+/*Display Block - Ocupa toda a área disponível.
+Display Inline - 1. Não consigo utilizar o elemento Margin - Auto.
+                 2. Todo elemento inline permitirá que elementos sejam alinhados atráves do pai dele através do codigo "text-align: center;"*/
+
+#Profile p {
+  font-weight: 500px;
+  line-height: 24px;
+  margin-top: 8px;
+}
+
+/*Switch*/
+
+#switch {
+  position: relative;
+  width: 64px;
+
+  margin: 4px auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+.light #switch button {
+  right: 0;
+  Left: initial;
+}
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+/* links */
+
+ul {
+  list-style: none; /*Define o estilo da lista, nesse caso none, retira o estilo imposto. Ex. pontos ou afins...*/
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  padding: 24px 0px;
+}
+
+ul li a {
+  /*border: 1px solid red;*/
+  display: flex;
+  align-items: center;
+  justify-content: center; /*Justify-content é utilizado para alinhar os elementos ao longo do eixo principal (main-axis), cuja direção (row ou column) é definida a partir da propriedade flex-direction.*/
+
+  padding: 16px 24px; /*Padding define uma a distância entre o conteúdo de um elemento e suas bordas*/
+
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  text-decoration: none;
+  font-weight: 500;
+
+  transition: background 0.2s;
+}
+
+ul li a:hover { /*Pseudo seletor*/
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
+}
+
+#Social-Links { /*Identificador Pai*/
+  display: flex; /*Encarregado de habilitar o Gap*/
+  justify-content: center; /*Centraliza os elementos(icones)*/
+
+  padding: 24px; /*Padding define uma a distância entre o conteúdo de um elemento e suas bordas*/
+
+  font-size: 24px; /*Edita o tamanho dos elementos(icones)*/
+}
+
+#Social-Links a { /*Identificador filho*/
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ padding: 16px;
+
+ transition: background 0.2s;
+ border-radius: 50%;
+}
+
+#Social-Links a:hover { /*Pseudo Seletor-Identificador*/
+ background: var(--highlight-color);
+ padding: 16px;
+ 
+}
+
+footer{
+  padding: 24px 0px;
+  text-align: center;
+  font-size: 16px;
+}
